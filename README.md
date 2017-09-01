@@ -13,7 +13,7 @@ the goal was to switch the splines only and the simulation worked correctly
 
 change the measures to function measurements, f(t)
 
-###TODO:
+### TODO:
 automate this whole process
 
 try to figure out the torque_measuremnets on motors
