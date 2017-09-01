@@ -13,9 +13,10 @@ the goal was to switch the splines only and the simulation worked correctly
 
 change the measures to function measurements, f(t)
 
-**TODO:** 	automate this whole process
+###TODO:
+automate this whole process
 
-			try to figure out the torque_measuremnets on motors
+try to figure out the torque_measuremnets on motors
 
-			if possible, does that mean F/T on TCP is also possible?
+if possible, does that mean F/T on TCP is also possible?
 
