@@ -2,8 +2,39 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20170907
+### save **test_motor_torque_sensors.bin** as **test_gravity_compensation_capability.bin**
+
+this is an attempt trying to compensate "everything"
+
+the whole procedure would look like this:
+
+- drive with TCP to obtain joint motion splines
+- drive with motors to obtain joint torque splines
+- drive with TCP again with compensation from those splines
+- take measurements on "hand" when drive with TCP, the second one should be zero
+
+the result looked promising yet confusing
+
+I managed to make F/T on hand (if correct) very close to zero with compensation
+
+but the problem was, it's already close to zero without compensation
+
+this could be correct, since the hand is giving F/T at a far side
+
+like, you are lifting a bar at one side and the rotation point is at the other side
+
+**Note:** the measurements on hand were w.r.t the world frame right now, it could be wrong
+
+**Note:** the measurements on hand were w.r.t the hand frame in **drive_with_force.bin**
+
+given the speed of this "estimation", this could be a strategy to compensate "everything", if we really need one
+
+there is still a possibility that "gravity compensation" is done automatically
+
+
 ## 20170906
-repurpose **test_motor_torque_sensors.bin** to test what should be the right way to measure joint torques
+### repurpose **test_motor_torque_sensors.bin** to test what should be the right way to measure joint torques
 
 the current question is: what are we really measuring? we have to find a right way and stick to it
 
@@ -13,9 +44,15 @@ changed all the measurements to Z component (rotation axis) and w.r.t local coor
 
 **At this point I started to wonder what I did and how that's useful.**
 
+zero-gravity test was also done in this file
+
+this gave me some confirmation about sensors' correctness and proof that there were inertial f/t
+
+on the motors the torque with gravity is almost 100 times the torque without
 
 
-save **test_motor_torque_sensors.bin** as **drive_with_force.bin**
+
+### save **test_motor_torque_sensors.bin** as **drive_with_force.bin**
 
 this is not really actuating the whole system with torque only and I doubt that would work
 
