@@ -2,8 +2,43 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20170912
+### save *test_motor_torque_sensors.bin* as *test_controlblock_whole.bin*
+I think so far, the model is capable of the whole procedure
+
+This is an attempt to generate the Simulink block for co-simulation
+- deactivate all the unrelated motion, measurements, and F/T
+- establish measurements on hand w.r.t world frame
+
+the newly generated control related things are *Control_Plant_2*,
+this is the whole control plant block with both pathways
+
+I made mistakes in a few I/Os so *Control_Plant_2* was abandoned and deleted
+
+regenerated files are *whole_plant_bothway*
+
+I copied all the newly generated files to the Simulink folder
+
+the old *Control_Plant_1* is only the forward (position) pathway
+
+the model would not work after a simple assembly
+
+I realized I never align all the origins in different systems
+
+I went back to test with the forward pathway with forward kinematics (FK)
+
+I created transformation blocks to compensate offsets
+
+the model seemed to have a drift in TraY
+
+~~I tried to make sense of the measurements to make sure they were properly aligned~~
+
+it actually kinda worked
+
+**some of these logs are Simulink related**
+
 ## 20170907
-### save **test_motor_torque_sensors.bin** as **test_gravity_compensation_capability.bin**
+### save *test_motor_torque_sensors.bin* as *test_gravity_compensation_capability.bin*
 
 this is an attempt trying to compensate "everything"
 
@@ -34,7 +69,7 @@ there is still a possibility that "gravity compensation" is done automatically
 
 
 ## 20170906
-### repurpose **test_motor_torque_sensors.bin** to test what should be the right way to measure joint torques
+### repurpose *test_motor_torque_sensors.bin* to test what should be the right way to measure joint torques
 
 the current question is: what are we really measuring? we have to find a right way and stick to it
 
@@ -52,7 +87,7 @@ on the motors the torque with gravity is almost 100 times the torque without
 
 
 
-### save **test_motor_torque_sensors.bin** as **drive_with_force.bin**
+### save *test_motor_torque_sensors.bin* as *drive_with_force.bin*
 
 this is not really actuating the whole system with torque only and I doubt that would work
 
@@ -71,7 +106,7 @@ apply those splines and see if we could recreate the force
 there are some small drift but I think it's proved to be basically working
 
 ## 20170903
-save **new_ang_measure.bin** as **test_motor_torque_sensors.bin**
+### save *new_ang_measure.bin* as *test_motor_torque_sensors.bin*
 
 try to see how the motor torque sensors work
 
@@ -90,7 +125,7 @@ find a way to measure the F/T on TCP when motor torque is active
 ## 20170901 
 initiate this directory
 
-save **new_motion.bin** as **new_ang_measure.bin**
+### save *new_motion.bin* as *new_ang_measure.bin*
 
 try to have fixed def for angle's direction and bias 
 
