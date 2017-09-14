@@ -2,6 +2,19 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20170914
+### reopened *drive_with_force.bin* but made no changes
+confirmed the F/T on hand in free space at the origin point with ADAMS model
+
+the Simulink result was the same, meaning the measurements were OK
+
+### TODO:
+make sense of the present measurements (may lead to the next item)
+
+double check if the direction of torque on motors were correct
+
+there was no motor model or gear ratio in Simulink right now
+
 ## 20170912
 ### save *test_motor_torque_sensors.bin* as *test_controlblock_whole.bin*
 I think so far, the model is capable of the whole procedure
@@ -29,7 +42,7 @@ I went back to test with the forward pathway with forward kinematics (FK)
 
 I created transformation blocks to compensate offsets
 
-the model seemed to have a drift in TraY
+**NOTE:** the model seemed to have a drift in TraY
 
 ~~I tried to make sense of the measurements to make sure they were properly aligned~~
 
@@ -103,7 +116,7 @@ next, TCP driven, create measures for those motion
 
 apply those splines and see if we could recreate the force
 
-there are some small drift but I think it's proved to be basically working
+there are some small drift (noise) but I think it's proved to be basically working
 
 ## 20170903
 ### save *new_ang_measure.bin* as *test_motor_torque_sensors.bin*
@@ -119,7 +132,9 @@ set motor active and measure motor torque
 save these as splines and apply them while motor active
 
 ### TODO:
-find a way to measure the F/T on TCP when motor torque is active
+~~find a way to measure the F/T on TCP when motor torque is active~~
+
+(20170914) see *drive_with_force.bin*, done
 
 
 ## 20170901 
@@ -136,7 +151,8 @@ change the measures to function measurements, f(t)
 ### TODO:
 automate this whole process
 
-try to figure out the torque_measuremnets on motors
+~~try to figure out the torque_measuremnets on motors~~
 
-if possible, does that mean F/T on TCP is also possible?
+~~if possible, does that mean F/T on TCP is also possible?~~
 
+(20170914) see *test_motor_torque_sensors.bin* and *drive_with_force.bin*, done
