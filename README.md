@@ -2,6 +2,20 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20170916
+### reopened *drive_with_force.bin* but made no changes
+since I successfully rendered a force along z axis, those motor torques should give me a good estimation about directions
+
+checked all the motor torque splines and flipped the direction of motor 1 in simulink
+
+the scope looked better but still there were undesired F/Ts
+
+I also lowered the stiffness of the wall, otherwise, a small error could be magnified like a wrong measurement
+
+**NOTE:** there could be position errors in all directions
+
+**maybe I should start something like this for Simulink Models as well**
+
 ## 20170914
 ### reopened *drive_with_force.bin* but made no changes
 confirmed the F/T on hand in free space at the origin point with ADAMS model
@@ -12,6 +26,8 @@ the Simulink result was the same, meaning the measurements were OK
 make sense of the present measurements (may lead to the next item)
 
 double check if the direction of torque on motors were correct
+
+(20170916) flip motor 1. motor 5 might also need to be flipped.
 
 there was no motor model or gear ratio in Simulink right now
 
