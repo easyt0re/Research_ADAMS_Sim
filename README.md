@@ -2,6 +2,37 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20170919
+### save *test_controlblock_whole.bin* as *params_match_real_device.bin*
+rewrote the IK just to clarify things and have it as a math model
+
+compared this math model with ADAMS model and realized the params for the two are not the same
+
+(no wonder the measurements were off and all)
+
+(how should I explain this to my supervisors, because I'm stupid?)
+
+this was the file to update the params in the ADAMS model to match that in the real device
+
+now, math model, ADAMS model, and the real device should be the same (of the same params setup)
+
+because the TCP was moved due to change of params, I redefined hand motion
+
+with the help from Xuan, the motion now would change with the model
+
+generated 2 Simulink Model from ADAMS
+
+*realHDwG:* real haptic device with gravity, this would be the main version from now on
+
+*realHDwoG:* without gravity, feel like it might be useful
+
+### TODO:
+assumed everything moved with the model, need to check
+
+there was an offset between the point "TCP" in math model and ADAMS model, choose one (due to universal joint instead of ball joint)
+
+put the new ADAMS block into the Simulink assembly and test
+
 ## 20170916
 ### reopened *drive_with_force.bin* but made no changes
 since I successfully rendered a force along z axis, those motor torques should give me a good estimation about directions
