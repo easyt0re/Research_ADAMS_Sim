@@ -2,6 +2,24 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20170923
+### reopen *params_match_real_device.bin* but made no changes
+new block was put into the Simulink assembly but didn't work
+
+there was a strange offset in joint 1 and 3
+
+changed the setup to run xuan's motion to check the initial pose measurements
+
+discovered there was a new offset for joint 1 and 3
+
+could be b/c the design params changes or my measurements are sensible to params changes
+
+saved nothing and compensated new offsets in Simulink model
+
+**Note:** check everytime when the design params are changed
+
+**Note:** the unit for ADAMS model might not be as clear. the angle measurements should be in degrees but they were in rads. I have to check again about torques, Nm or Nmm.
+
 ## 20170919
 ### save *test_controlblock_whole.bin* as *params_match_real_device.bin*
 rewrote the IK just to clarify things and have it as a math model
@@ -31,7 +49,11 @@ assumed everything moved with the model, need to check
 
 there was an offset between the point "TCP" in math model and ADAMS model, choose one (due to universal joint instead of ball joint)
 
-put the new ADAMS block into the Simulink assembly and test
+(20170923) kinda solved this by using a F/T transformation formula. have to keep looking
+
+~~put the new ADAMS block into the Simulink assembly and test~~
+
+(20170923) it's working now. see related log.
 
 ## 20170916
 ### reopened *drive_with_force.bin* but made no changes
