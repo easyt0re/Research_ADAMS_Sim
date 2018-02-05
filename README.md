@@ -2,6 +2,15 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180205
+haven't been using this for quite a while b/c there were no updates in ADAMS
+
+due to the development of the project, a verification process was needed
+
+and the ADAMS model needed to be tailored to its needs, namely the IOs
+
+there could be several different ADAMS models due to different sets of IOs
+
 ## 20170923
 ### reopen *params_match_real_device.bin* but made no changes
 new block was put into the Simulink assembly but didn't work
