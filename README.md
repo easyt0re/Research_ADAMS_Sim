@@ -2,6 +2,24 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180226
+### save *params_match_real_device.bin* as *I_trajO_torq.bin* b/c input: trajectory/ output: torques
+this file was for system verification of the math model we derived and the ADAMS model we built
+
+due to the difficulties in driving the robot in ADAMS with pure joint torques, we formulated the verification as: given a certain trajectory, what's the joint torques
+
+given the fact that ADAMS could only measure torque when there was motion, everything happened in joint space, meaning:
+
+the input was the trajectory given in joint space and the output was the joint torques measured by the motion
+
+deactivated or deleted all the unnecessary I/Os
+
+created *measure_mot_tor_i* as torque measurement for each joint
+
+created *drive_joint_i* as angle input for each joint
+
+these two were not included in previous models b/c we seldom considered the robot to be a manipulator
+
 ## 20180205
 haven't been using this for quite a while b/c there were no updates in ADAMS
 
