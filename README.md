@@ -2,6 +2,39 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180322
+### shouldn't stack models one on another, from now on, note I/Os and shoot more reusability
+### modified *I_trajO_torq.bin* b/c the measurements were wrong in previous version
+changed the torque measurements to match the new motions
+
+exported control plant as *manipulator_joint_v2*
+
+### save *I_trajO_torq.bin* as *findEqPt.bin* to find equilibrium points for the system
+equilibrium points were (probably) needed due to introducing of linmod()
+
+Inputs (active driving motion): motion for each joint (set to zero); Outputs: torque measurements for each motion
+
+this was the pair needed to define each equilibrium point
+
+the first equilibrium point was chosen at the center of the WS, which made sense
+
+but after some initial tryouts, an offset was discovered
+
+basically, the TCP was not at origin when all joints were zeros, indicating offsets in the joints
+
+previously, (see log 20170923) some strange offsets were found in some of the joints
+
+### save *I_trajO_torq.bin* as *findEqPtTCP.bin* to find the offsets in the joints
+as described previously, this was the file to id joint offsets when TCP was at origin
+
+Inputs (active driving motion): motion of the TCP (set to zero); Outputs: joint angle (encoder) measurements for each joint
+
+discovered a 4.063 degrees offset in joint 1 and 3 which were not compensated previously
+
+went back to test them in the *findEqPt.bin* and it worked
+
+however, the torque measurements for joint 2 and 4 were not "correct" by the look of it (2 and 200, asymmetrical)
+
 ## 20180226
 ### save *params_match_real_device.bin* as *I_trajO_torq.bin* b/c input: trajectory/ output: torques
 this file was for system verification of the math model we derived and the ADAMS model we built
@@ -19,6 +52,8 @@ created *measure_mot_tor_i* as torque measurement for each joint
 created *drive_joint_i* as angle input for each joint
 
 these two were not included in previous models b/c we seldom considered the robot to be a manipulator
+
+exported control plant as *manipulator_joint*
 
 ## 20180205
 haven't been using this for quite a while b/c there were no updates in ADAMS
