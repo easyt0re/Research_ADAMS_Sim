@@ -2,10 +2,26 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180323
+there was no model built before that was driven by the joints
+### get rid of *I_trajO_torq.bin*, *manipulator_joint_v2*, *manipulator_joint*
+checked the torque measurements again and they were still wrong
+
+### save *findEqPt.bin* as *joint2torq.bin* to keep developing the same function aimed for *I_trajO_torq.bin* 
+recreated *measure_mot_tor_i* and *drive_joint_i* b/c they were deleted in the process
+
+exported control plant as *jts2torqs*
+
+sanity check with all 0s as joint input and got torque output
+
+equilibrium point: joints = [0; 0; 0; 0; 0; 0]; torques = [-359.3; 217.8; 359.5; 2.40; -0.22; -952.1];
+
+these numbers were verified with both ADAMS and Simulink models
+
 ## 20180322
 ### shouldn't stack models one on another, from now on, note I/Os and shoot more reusability
 ### modified *I_trajO_torq.bin* b/c the measurements were wrong in previous version
-changed the torque measurements to match the new motions
+changed the torque measurements to match the new motions (20180323 this actually failed b/c they couldn't be changed)
 
 exported control plant as *manipulator_joint_v2*
 
@@ -228,8 +244,6 @@ zero-gravity test was also done in this file
 this gave me some confirmation about sensors' correctness and proof that there were inertial f/t
 
 on the motors the torque with gravity is almost 100 times the torque without
-
-
 
 ### save *test_motor_torque_sensors.bin* as *drive_with_force.bin*
 
