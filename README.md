@@ -2,6 +2,15 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180325
+coord frame is a biatch...
+
+happened to realize that the rotational axes of joint 2 and 4 were under different conventions
+
+joint 2 was pointing away from the main column while joint 4 was pointing towards
+
+all pointing out was used in the theoretical dynamic model
+
 ## 20180323
 there was no model built before that was driven by the joints
 ### get rid of *I_trajO_torq.bin*, *manipulator_joint_v2*, *manipulator_joint*
