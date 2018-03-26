@@ -2,6 +2,12 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180326
+### save *joint2torq.bin* as *torq2joint.bin* b/c of the new I/Os
+input: joint torques; output: joint angles; observed with encoders
+
+exported control plant as *tqs2jts*
+
 ## 20180325
 coord frame is a biatch...
 
