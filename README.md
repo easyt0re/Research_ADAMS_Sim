@@ -2,6 +2,14 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180330
+### save *findEqPt.bin* as *checkL3Direction.bin* to do simple checks on the direction of L3 (BD)
+through derivation of the theoretical model, simple checks were needed to verify the correctness of the result
+
+this could also help me understand the device better, especially with the asymmetry
+
+2 markers were found to represent the direction but haven't dicided how to create the measurement
+
 ## 20180326
 ### save *joint2torq.bin* as *torq2joint.bin* b/c of the new I/Os
 input: joint torques; output: joint angles; observed with encoders
