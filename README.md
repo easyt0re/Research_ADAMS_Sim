@@ -2,6 +2,16 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180426
+### open *constTorqVeri.bin* to check the joint angle readings when TCP is at origin
+deactivated gravity, made all torque input 0, and check the readings
+
+joint_angle_readings = [4.063; 0; -4.063; 0; 0; 0]; % this is degree (unit)
+
+this coincided with the offset found earlier (see 20180322)
+
+closed the model without saving so it should be fine
+
 ## 20180420
 ### save *torq2joint.bin* as *constTorqVeri.bin* to do constant torque input verification
 would like to see some "step input response" in ADAMS model
