@@ -2,9 +2,31 @@
 This is just a log for my work in ADAMS Simulation. It helps me keep track of things.
 
 # LOG
+## 20180514
+### save *torq2joint.bin* as *torq2jointINIT.bin* for developing initial conditions and angular velocity output
+capability of different initial positions / op was needed for the verification framework
+
+currently it's treated as additional input to the plant
+
+b/c there were strange offset in joint angles, expressions for motion_joint_i (JAD) were listed here for fast references
+
+-VARVAL(drive_joint_1) * 1d + (-4.063d)
+
+-VARVAL(drive_joint_2) * 1d - 156.2680031d
+
+-VARVAL(drive_joint_3) * 1d - (-4.063d)
+
+-VARVAL(drive_joint_4) * 1d + 181.9d
+
+-VARVAL(drive_joint_5) * 1d
+
+-VARVAL(drive_joint_6) * 1d
+
+this didn't work b/c apparently the initial conditions needed to be a constant value rather than a variable
+
 ## 20180430
 ### export *tqs2jtsNoG* from *torq2joint.bin* with the gravity deactivated
-closed without saving, so the *torq2joint.bin* is still with gravity activated
+closed without saving, so the *torq2joint.bin* was still with gravity activated
 
 the control plant was lost but that was OK
 
